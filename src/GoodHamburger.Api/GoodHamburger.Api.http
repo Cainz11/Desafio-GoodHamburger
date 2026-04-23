@@ -1,0 +1,9 @@
+@host = http://localhost:5267
+
+### Cardápio
+GET {{host}}/api/menu
+Accept: application/json
+
+### Pedidos
+GET {{host}}/api/orders
+Accept: application/json

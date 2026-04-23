@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/GoodHamburger.Api/GoodHamburger.Api.csproj" />
+    <Project Path="src/GoodHamburger.Application/GoodHamburger.Application.csproj" />
+    <Project Path="src/GoodHamburger.Domain/GoodHamburger.Domain.csproj" />
+    <Project Path="src/GoodHamburger.Infrastructure/GoodHamburger.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/GoodHamburger.Domain.Tests/GoodHamburger.Domain.Tests.csproj" />
+  </Folder>
+</Solution>
