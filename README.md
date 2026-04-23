@@ -1,8 +1,6 @@
 # Good Hamburger — API
 
-API REST (.NET 10) para pedidos da lanchonete: cardápio, CRUD de pedidos, descontos e validações de composição.
-
-**Projetos:** `GoodHamburger.Domain`, `Application`, `Infrastructure` (EF Core + SQL Server), `GoodHamburger.Api`.
+API REST (.NET 10) para pedidos da lanchonete: cardápio, CRUD de pedidos, descontos e validações de composição do pedido.
 
 ## Subir o banco
 
@@ -10,7 +8,7 @@ API REST (.NET 10) para pedidos da lanchonete: cardápio, CRUD de pedidos, desco
 docker compose up -d
 ```
 
-Credenciais locais: usuário `sa`, senha `GoodHamburger@2026` (veja `docker-compose.yml` e `appsettings.json`). Se a porta 1433 estiver ocupada, mude o mapeamento no compose e na connection string.
+Credenciais locais: usuário `sa`, senha `GoodHamburger@2026` (configurado no `docker-compose.yml` e `appsettings.json`).
 
 ## Rodar a API
 
@@ -34,7 +32,7 @@ Migrações rodam na subida (`MigrateAsync`).
 | PUT | `/api/orders/{id}` |
 | DELETE | `/api/orders/{id}` |
 
-Corpo de criação/atualização: `{ "menuItemIds": [ "guid", ... ] }` (até 3 itens, sem duplicar categoria).
+Body de criação/atualização: `{ "menuItemIds": [ "guid", ... ] }` (até 3 itens, sem duplicar categoria).
 
 ## Testes
 
@@ -47,7 +45,3 @@ dotnet test GoodHamburger.slnx
 ```powershell
 dotnet ef migrations add Nome --project src/GoodHamburger.Infrastructure --startup-project src/GoodHamburger.Api --context AppDbContext --output-dir Persistence/Migrations
 ```
-
-## Perguntas técnicas
-
-Decisões de arquitetura, descontos, banco e erros: [docs/PERGUNTAS_TECNICAS.md](docs/PERGUNTAS_TECNICAS.md).
